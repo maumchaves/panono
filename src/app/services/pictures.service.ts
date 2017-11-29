@@ -12,7 +12,8 @@ export class PicturesService {
   private favorites: string[];
 
   constructor(private http: HttpClient) {
-    this.favorites = localStorage.getItem('favorites').split(',') || [];
+    this.favorites = localStorage.getItem('favorites') ?
+      localStorage.getItem('favorites').split(',') : [];
   }
 
   getNext(url: string = this.apiUrl): Observable<PicturesCollection> {
