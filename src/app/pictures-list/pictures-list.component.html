@@ -1,0 +1,31 @@
+<div class="list-container" [class.list-view]="listViewFlag">
+  <div class="card-wrapper"
+  *ngFor="let picture of list | favorites:showFavoritesFlag">
+    <div class="card">
+      <img class="card-img-top" src="{{picture.url}}" alt="Card image cap">
+      <div class="card-body">
+        <div class="picture-header">
+          <div class="left">
+            <ng-container [ngSwitch]="picture.favorite">
+              <i class="material-icons" *ngSwitchCase="true"
+              (click)="removeFavorite(picture)">favorite</i>
+              <i class="material-icons" *ngSwitchDefault
+              (click)="setFavorite(picture)">favorite_border</i>
+            </ng-container>
+            <h6 class="card-title">{{picture.title}}</h6>
+          </div>
+          <span class="card-text">
+            <small class="text-muted">{{picture.date | date}}</small>
+          </span>
+        </div>
+        <h6 class="card-title text-truncate">{{picture.title}}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pagination">
+    <button type="button" class="btn btn-secondary"
+    [disabled]="pages.length < 2" (click)="prevPage()">Previous</button>
+    <button type="button" class="btn btn-secondary"
+    [disabled]="!nextUrl" (click)="nextPage()">Next</button>
+</div>

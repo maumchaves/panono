@@ -1,0 +1,35 @@
+<div class="toolbar bg-dark text-white">
+  <div class="left">
+    <nav class="navbar navbar-dark bg-dark" *ngIf="!sidebarPage.toggleFlag">
+      <button class="navbar-toggler" type="button" (click)=sidebarPage.toggle()>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>      
+    <h1>Explore</h1>
+  </div>
+  <div class="right">
+    <div class="branding">
+      <img  class="img-fluid"
+      src="https://www.panono.com/fileadmin/assets/img/content/1.png"/>
+    </div>
+  </div>
+</div>
+<div class="container-fluid text-dark">
+  <panono-sidebar-page #sidebarPage>
+    <ng-template #sidebarContent let-toggle>
+      <panono-explore-sidebar
+        [toggle]=toggle
+        (onViewSelect)="onViewSelect($event)"
+        (onFilterSelect)="onFilterSelect($event)">
+      </panono-explore-sidebar>
+    </ng-template>
+    <ng-template #pageContent let-toggle>
+      <div class="content">
+        <panono-pictures-list
+          [listViewFlag]="listViewFlag"
+          [showFavoritesFlag]="showFavoritesFlag">
+        </panono-pictures-list>
+      </div>
+    </ng-template>
+  </panono-sidebar-page>
+</div>

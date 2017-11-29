@@ -1,0 +1,23 @@
+.sidebar-body {
+  padding: 15px;
+  height: 100%;
+  .sidebar-header {
+    justify-content: flex-end;
+    display: flex;
+  }
+  .sidebar-content {
+    margin-top: 2rem;
+    padding: 15px;
+  }
+  .sidebar-block {
+    margin-bottom: 2rem;
+  }
+  .dropdown {
+    &-btn {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

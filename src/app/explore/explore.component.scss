@@ -1,0 +1,38 @@
+@import './../../styles/variables';
+
+.toolbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1100;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  padding: 5px 15px;
+  > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .right {
+    max-width: 40%;
+  }
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+  .navbar {
+    margin-right: 15px;
+    padding: 0;
+    button {
+      font-size: 1rem;
+    }
+  }
+  .branding {
+    max-width: 10rem;
+  }
+}
+
+.container-fluid {
+  padding-top: 50px;
+}

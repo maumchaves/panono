@@ -1,0 +1,36 @@
+<div class="sidebar-body bg-light">
+  <div class="sidebar-header">
+    <button type="button" class="btn btn-secondary btn-sm"
+    (click)="toggle()">Hide</button>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-block">
+      <h6>View</h6>
+      <div ngbDropdown class="dropdown">
+        <button class="btn btn-outline-primary dropdown-btn"
+        ngbDropdownToggle>{{currentView}}</button>
+        <div ngbDropdownMenu>
+          <button class="dropdown-item"
+          (click)="selectView(viewOptions.Grid)">{{viewOptions.Grid}}</button>
+          <button class="dropdown-item"
+          (click)="selectView(viewOptions.List)">{{viewOptions.List}}</button>
+        </div>
+      </div>
+    </div>
+    <h6>Filter</h6>
+    <div ngbDropdown class="dropdown">
+      <button class="btn btn-outline-primary dropdown-btn"
+      ngbDropdownToggle>{{currentFilter}}</button>
+      <div ngbDropdownMenu>
+        <button class="dropdown-item"
+        (click)="selectFilter(filterOptions.All)">
+          {{filterOptions.All}}
+        </button>
+        <button class="dropdown-item"
+        (click)="selectFilter(filterOptions.Favorites)">
+          {{filterOptions.Favorites}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

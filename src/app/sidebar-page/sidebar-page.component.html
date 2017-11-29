@@ -1,0 +1,12 @@
+<div class="sidebar-page" [class.show]="toggleFlag">
+  <panono-sidebar #sidebar>
+    <ng-template
+      [ngTemplateOutlet]="sidebarContentTemplate"
+      [ngTemplateOutletContext]="{$implicit: toggle}"></ng-template>
+  </panono-sidebar>
+  <div class="page-content">
+    <ng-template
+      [ngTemplateOutlet]="pageContentTemplate"
+      [ngTemplateOutletContext]="{$implicit: toggle}"></ng-template>
+  </div>
+</div>
